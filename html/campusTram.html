@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" sizes="16x16" href="../src/img/global/icon.png">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+    <title>Campus Tram</title>
+</head>
+<body>
+    <h1>Campus Tram</h1>
+    <div class="img-container">
+        <img src="../src/img/campusTram/presentation.png" alt="presentation.png" id="infoImg">
+    </div>
+    <div class="div-text">
+        Il s'agit de l'arrêt de tram le plus près des deux cités universitaires et des deux restaurants 
+        universitaires.
+    </div>
+    <div id="next-place">
+        <h2>Lieu suivant</h2>
+        <h3 class="heading">Simon</h3>
+        <h4 id='info'></h4>
+        <div class="box unclickable" id='containerSimon'>
+            <div class='button' id='green'> </div>
+            <div class='button' id='red'> </div>
+            <div class='button' id='yellow'> </div>
+            <div class='button' id='blue'> </div>
+        </div>
+        <button class="button" id="start" onclick="startGame()">Start</button>
+    </div>
+    <div id="indice"></div>
+    <script src="../scripts/campusTram.js"></script>
+</body>
+</html>

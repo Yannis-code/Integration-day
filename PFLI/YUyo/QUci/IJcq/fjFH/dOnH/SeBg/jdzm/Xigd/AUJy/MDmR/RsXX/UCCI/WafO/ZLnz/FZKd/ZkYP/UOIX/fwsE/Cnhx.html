@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../../../../../../../../../../../../../../../../../src/img/global/icon.png">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../../../../../../../../../../../../css/style.css"/>
+    <title>Enigme Finale</title>
+    <!--
+        ROOT DIRECTORY FROM HERE:   ../../../../../../../../../../../../../../../../../../../
+    -->
+</head>
+<body>
+    <h1>Enigme Finale</h1>
+    <div class="img-container">
+        <img src="../../../../../../../../../../../../../../../../../../../src/img/finale/morse.gif" alt="presentation.png" id="infoImg">
+    </div>
+    <div id="next-place">
+        <h2>Décodez ce message</h2>
+        <div class="div-text">
+            Vous pouvez vous aidez du traducteur ci-dessous pour décoder le message.</br>
+            Ce traducteur ne comprend que trois caractères d'entrées:
+            <ul>
+                <li><span class="clavier">/</span>  Pour séparer les mots</li>
+                <li><span class="clavier">ESPACE</span>  Pour séparer les lettres</li>
+                <li>
+                    <span class="clavier">.</span>  Pour les bips courts
+                </li>
+                <li>
+                    <span class="clavier">-</span>  Pour les bips longs 
+                </li>
+            </ul>
+            Exemples:
+            <ul>
+                <li>
+                    Bip court 
+                    <img src="../../../../../../../../../../../../../../../../../../../src/img/global/play.png" class="play" id="short">
+                </li>
+                <li>
+                    Bip long 
+                    <img src="../../../../../../../../../../../../../../../../../../../src/img/global/play.png" class="play" id="long">
+                </li>
+                <li>
+                    <darkblue>A</darkblue><darkred>B</darkred> <darkgreen>C</darkgreen> = 
+                    <img src="../../../../../../../../../../../../../../../../../../../src/img/global/play.png" class="play" id="ABC"> = 
+                    <darkblue>.-</darkblue> <darkred>-...</darkred> / <darkgreen>-.-.</darkgreen>
+                </li>
+            </ul>
+        </div>
+        <div class="div-text">
+            Message à décoder
+        </div>
+        <audio controls src="../../../../../../../../../../../../../../../../../../../src/audio/morse.mp3"></audio>
+        <form id="form">
+            <div id="morse-input">
+                <input type="text" id="textIn" placeholder="MORSE">
+            </div>
+            <div id="text-output">
+                <input type="text" id="textOut" name="reponse" placeholder="TEXTE">
+            </div>
+            <button type="submit" class="button">Valider</button>
+        </form>
+    </div>
+    <div id="indice"></div>
+    <script src="../../../../../../../../../../../../../../../../../../../scripts/Cnhx.js"></script>
+</body>
+</html>

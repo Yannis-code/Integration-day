@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" sizes="16x16" href="../src/img/global/icon.png">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+    <title>SIGMA</title>
+</head>
+<body>    
+    <h1>SIGMA</h1>
+    <div class="img-container">
+        <img src="../src/img/sigma/presentation.png" alt="presentation.png" id="infoImg">
+    </div>
+    <div class="div-text">
+        Sigma Clermont est la troisième école d'ingénieurs du campus avec Polytech et ISIMA qui depuis cette année 
+        s'allient pour former le groupe Clermont Auvergne INP.
+    </div>
+    <div id="next-place">
+        <h2>Lieu suivant</h2>
+        <form id="form" class="div-text">
+            <div class="div-text">
+                Trouvez ce qu'affichera ce code python à la fin de son execution
+            </div>
+            <div id="code">
+                <pre>
+<pink>from</pink> <blue>Alphabet</blue> <pink>import</pink> <yellow>AlphabetlettrePrecedante</yellow>
+<gray># Import de la fonction AlphabetlettrePrecedante()</gray>
+
+<blue>message</blue> = <orange>"qkcd"</orange>
+<blue>messageDecode</blue> = <orange>""</orange>
+
+
+<pink>for</pink> <blue>i</blue> <pink>in</pink> <green>range</green>(<yellow>len</yellow>(<blue>message</blue>)):
+    <blue>lettre</blue> = <blue>message</blue>[<blue>i</blue>]
+
+    <pink>for</pink> <blue>a</blue> <pink>in</pink> <green>range</green>(<blue>i</blue> + 1):
+        <blue>lettre</blue>.<yellow>AlphabetlettrePrecedante</yellow>()
+        <gray># "b".AlphabetlettrePrecedante() = "a"</gray>
+        <gray># "a".AlphabetlettrePrecedante() = "z"</gray>
+        <gray># " ".AlphabetlettrePrecedante() = " "</gray>
+
+    <blue>messageDecode</blue> += <blue>lettre</blue>
+
+<yellow>print</yellow>(<blue>messageDecode</blue>)
+</pre>
+            </div>
+            <input type="text" name="reponse" placeholder="Réponse">
+            <button type="submit" class="button">Valider</button>
+        </form>
+    </div>
+    <div id="indice"></div>
+    <script src="../scripts/sigma.js"></script>
+</body>
+</html>

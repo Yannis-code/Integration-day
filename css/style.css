@@ -1,0 +1,466 @@
+@import url("../font/style.css");
+
+red{color: rgb(255, 61, 61)}
+pink{color: #c17dac}
+green{color: #42b69d}
+blue{color: #8dcad2}
+yellow{color: #d6d084}
+orange{color: #c5814e}
+gray{color: darkgray}
+darkblue{color: #2343d1}
+darkred{color: #e21717}
+darkgreen{color: #12812e}
+
+:root{
+    --main-bg-color: rgb(31, 31, 31);
+    --second-bg-color: rgb(49, 49, 49);
+    --main-text-color: rgb(255, 255, 255);
+    --shadow-color: rgb(12, 12, 12);
+}
+
+body{
+    font-family: 'Glypha LT Pro 55 Roman';
+    font-weight:normal;
+    min-width: 310px;
+    max-width: 500px;
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+    text-align: center;
+    padding: 0px 3px;
+}
+
+h1, h2, h3{
+    font-family: 'Glypha LT Pro 75 Black';
+    font-weight: normal;
+    width: 100%;
+}
+
+.div-text{
+    text-align: justify;
+    margin: 10px 0px;
+    font-size: medium;
+    font-weight: lighter;
+}
+
+.result-text{
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+}
+
+.button, input[type=text]{
+    text-align: center;
+    min-width: 80px;
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+    margin: 5px;
+    padding: 10px;
+    border: solid var(--main-text-color) 2px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 5px var(--shadow-color);
+    text-shadow: 2px 2px 5px var(--shadow-color);
+    position: relative;
+    transition: background-color 1.0s ease;
+    overflow: hidden;
+}
+
+.button:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 50%;
+    left: 50%;
+    transform-style: flat;
+    transform: translate3d(-50%, -50%, 0);
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 100%;
+    transition: width 0.5s ease, height 0.5s ease;
+}
+.button:focus, .button:hover {
+    background: var(--second-bg-color);
+}
+.button:active:after {
+    width: 200px;
+    height: 200px;
+}
+
+.img-container{
+    text-align: justify;
+}
+
+img{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+video{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+#code, #code-result{
+    width: 100% - 20px;
+    background-color: var(--second-bg-color);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 10px;
+    text-align: left;
+}
+
+select{
+    margin: 5px 0px;
+    text-align: center;
+    background-color: var(--second-bg-color);
+    color: var(--main-text-color);
+    border: solid var(--main-text-color) 2px;
+    border-radius: 15px;
+}
+
+.carte{
+    width: 100%;
+    height: 400px;
+    border-radius: 10px;
+}
+
+/* ============= Epreuve des Boutons ===========*/
+ul{text-align: left}
+li{margin-top: 3px}
+
+#fakeClick{
+    color: rgb(141, 42, 141);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#click{cursor: text}
+
+#btn1, #btn2, #btn3, #btn4, #btn5, #btn6{
+    width: 100px;
+    height: 100px;
+    margin: 2px;
+    vertical-align: middle;
+    border: solid var(--main-text-color) 2px;
+    border-radius: 10px;
+}
+#btn1{background-color: rgb(71, 190, 71)}
+#btn2{background-color: rgb(255, 61, 61)}
+#btn3{background-color: rgb(255, 177, 32)}
+#btn5{background-color: rgb(35, 35, 255); border-radius: 50px}
+#btn6{background-color: rgb(141, 42, 141)}
+
+.bubble{
+    background-color: var(--second-bg-color);
+    border: solid var(--main-text-color) 2px;
+    box-shadow: 2px 2px 5px rgb(12, 12, 12);
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+}
+
+#clique-logo{
+    height: 25px;
+    width: inherit;
+    vertical-align: middle;
+}
+
+/* ============= Epreuve du Captcha ===========*/
+
+.box{
+    width: 100% - 20px;
+    border-radius: 10px;
+    padding: 10px;
+    background: var(--second-bg-color);
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 5px;
+    align-items: center;
+}
+
+input[type=checkbox]{display: none}
+
+label:before {
+    content: url("../src/img/maths/checkbox/Uncheck.png");
+    position: absolute;
+    z-index: 100;
+}
+
+:checked+label:before {content: url("../src/img/maths/checkbox/Check.png")}
+
+:checked+label img {
+    transform: scale(0.9);
+    box-shadow: 0 0 5px var(--shadow-color);
+    z-index: -1;
+}
+
+/* ============= Epreuve du Rébus ===========*/
+
+#rebus-box{
+    width: 100% - 20px;
+    border-radius: 10px;
+    padding: 2%;
+    background: var(--second-bg-color);
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 5px;
+}
+
+/* ============= Pop Up Image ===========*/
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    height: auto;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+  
+@keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: var(--main-text-color);
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+  
+.close:hover, .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 700px){
+    .modal-content {
+      width: 100%;
+    }
+}
+
+/* ============= Test de l'indice final ===========*/
+
+.path{
+    padding: 2%;
+    width: 96%;
+    border-radius: 10px;
+    text-align: left;
+    line-height: 22px;
+    background-color: var(--second-bg-color);
+}
+
+.folder-img{
+    vertical-align: -6px;
+    border-radius: none;
+    height: 20px;
+    width: auto;
+    border-radius: inherit;
+}
+
+#textIn{
+    font-size: larger;
+    width: 90%;
+    height: 50px;
+}
+
+#textOut{
+    font-size: larger;
+    width: 90%;
+    height: 50px;
+}
+
+.play{
+    vertical-align: middle;
+    border-radius: inherit;
+    padding: 5px;
+    border: solid var(--main-text-color) 2px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px var(--shadow-color);
+    text-shadow: 2px 2px 5px var(--shadow-color);
+    margin: 10px 0px;
+    height: 30px;
+    width: auto;
+}
+
+.clavier{
+    font-size: large;
+    font-weight: bold;
+    display: inline-block;
+    min-width: 30px;
+    min-height: 30px;
+    margin: 10px 5px;
+    padding: 5px 3px 0px 3px;
+    text-align: center;
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+    border: dotted var(--main-text-color) 2px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px var(--shadow-color);
+    text-shadow: 2px 2px 5px var(--shadow-color);
+}
+
+/* ======================== Simon Game ==============================*/
+
+.hidden {
+    display: none !important;
+}
+  
+.invisble {
+    visibility: hidden;
+}
+
+.unclickable {
+    pointer-events: none;
+}
+
+#red {
+    padding-top: 85%;
+    background-color: #f25022;
+    box-shadow: 0 0 0 1px #f25022 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 #c93a12, 0 8px 0 1px rgba(0, 0, 0, 0.4), 0 8px 8px 1px rgba(0, 0, 0, 0.5);
+    transition: 0.15s;
+}
+
+#red:hover,#red:focus {
+    background-color: #ff451a;
+    box-shadow: 0 0 0 1px #FF3000 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 10px 0 0 #e62b00, 0 10px 0 1px rgba(0, 0, 0, 0.4), 0 10px 8px 1px rgba(0, 0, 0, 0.6);
+}
+  
+#red:active, #red.activated {
+    box-shadow: 0 0 0 1px #ff5c36 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 0 0 1px rgba(0, 0, 0, 0.4);
+    background-color: #ff5c36;
+    transform: translateY(10px);
+}
+  
+#green {
+    padding-top: 85%;
+    background-color: #7fba00;
+    box-shadow: 0 0 0 1px #7fba00 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 #638f05, 0 8px 0 1px rgba(0, 0, 0, 0.4), 0 8px 8px 1px rgba(0, 0, 0, 0.5);
+    transition: 0.15s;
+}
+  
+#green:hover, #green:focus {
+    background-color: #8cc218;
+    box-shadow: 0 0 0 1px #8cc218 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 10px 0 0 #74a802, 0 10px 0 1px rgba(0, 0, 0, 0.4), 0 10px 8px 1px rgba(0, 0, 0, 0.6)
+}
+  
+#green:active, #green.activated {
+    box-shadow: 0 0 0 1px #a0ea00 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 0 0 1px rgba(0, 0, 0, 0.4);
+    background-color: #a0ea00;
+    transform: translateY(10px);
+}
+  
+#yellow {
+    padding-top: 85%;
+    background-color: #ffb900;
+    box-shadow: 0 0 0 1px #ffb900 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 #c28e07, 0 8px 0 1px rgba(0, 0, 0, 0.4), 0 8px 8px 1px rgba(0, 0, 0, 0.5);
+    transition: 0.15s;
+}
+  
+#yellow:hover, #yellow:focus {
+    background-color: #ffb900;
+    box-shadow: 0 0 0 1px #ffb900 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 #c28e07, 0 8px 0 1px rgba(0, 0, 0, 0.4), 0 8px 8px 1px rgba(0, 0, 0, 0.5);
+}
+  
+#yellow:active, #yellow.activated {
+    box-shadow: 0 0 0 1px #ffca3d inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 0 0 1px rgba(0, 0, 0, 0.4);
+    background-color: #ffca3d;
+    transform: translateY(10px);
+}
+  
+#blue {
+    padding-top: 85%;
+    background-color: #00a4ef;
+    box-shadow: 0 0 0 1px #00a4ef inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 #0883bc, 0 8px 0 1px rgba(0, 0, 0, 0.4), 0 8px 8px 1px rgba(0, 0, 0, 0.5);
+    transition: 0.15s;
+}
+  
+#blue:hover, #blue:focus {
+    background-color: #139ddd;
+    box-shadow: 0 0 0 1px #139ddd inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 10px 0 0 #0c7cb0, 0 10px 0 1px rgba(0, 0, 0, 0.4), 0 10px 8px 1px rgba(0, 0, 0, 0.6);
+}
+  
+#blue:active, #blue.activated {
+    box-shadow: 0 0 0 1px #2bbcff inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 0 0 1px rgba(0, 0, 0, 0.4);
+    background-color: #2bbcff;
+    transform: translateY(10px);
+}
+
+/* ========================== Toggle ============== */
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+  
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+  
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+  
+input:checked + .slider {background-color: #2196F3;}
+  
+input:focus + .slider {box-shadow: 0 0 1px #2196F3;}
+  
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+  
+/* Rounded sliders */
+.slider.round {border-radius: 34px;}
+.slider.round:before {border-radius: 50%;}
+
+.switch:before {content: inherit}
